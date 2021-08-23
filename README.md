@@ -7,14 +7,16 @@ an application that will power an online storefront that will allow our users to
 
 **_Phase 1_**: starting the process of creating an e-Commerce storefront using React with Redux, coupled with your live API server
 
+[pull request](https://github.com/hibasalem/storefront/pull/1)   
+[netlify](https://thirsty-snyder-a42635.netlify.app/)
+
 - Application Setup
 - Basic React Application
 - Redux State Management
 - State managed in memory
 - Material UI Components & Styling
 
-[pull request](https://github.com/hibasalem/storefront/pull/1)   
-[netlify](https://thirsty-snyder-a42635.netlify.app/)
+
 
 ![Uml](lab36.jpg)
 
