@@ -36,3 +36,63 @@
     transform: rotate(360deg);
   }
 }
+
+.cardMain {
+  /* margin: 5%; */
+  text-align: center;
+}
+
+.cardContaner {
+  /* margin: 5%; */
+}
+
+.myCard {
+  margin: 5%;
+  width: 300px;
+  display: inline-grid;
+}
+
+.name {
+  font-size: 50px;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+
+.discription {
+  font-size: 30px;
+  font-weight: 300;
+  color: rgb(134, 134, 134);
+}
+
+.footer {
+  height: 70px;
+  background-color: rgba(231, 231, 231, 0.288);
+  font-size: 30px;
+  text-align: center;
+  line-height: 35px;
+  vertical-align: middle;
+  color: rgb(134, 134, 134);
+  position: absolute;
+  width: 95%;
+  margin-left: 2.5%;
+  /* position: fixed; */
+  /* bottom: -7rem; */
+}
+
+.catego {
+  margin-left: 50px;
+}
+.catego h3 {
+  font-weight: 400;
+}
+
+.header {
+  width: 98%;
+  margin-left: 1%;
+}
+
+.appp {
+  background-color: rgba(231, 231, 231, 0.288) !important;
+  color: black !important;
+  letter-spacing: 3px !important;
+}
