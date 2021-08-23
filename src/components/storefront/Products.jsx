@@ -1,5 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { reduceCount } from '../../store/products';
+import { addItem } from '../../store/cart';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -21,16 +24,21 @@ const useStyles = makeStyles({
 function Products(props) {
   const classes = useStyles();
 
+  function handleAddToCart(item) {
+    props.addItem(item);
+    if (item.count > 0) props.reduceCount(item);
+  }
+
   return (
     <div className="cardMain">
       {/* {console.log(props)} */}
       <h2 className="name">{props.categories.active.normalizedName}</h2>
-      <h4 className="discription" >{props.categories.active.description}</h4>
+      <h4 className="discription">{props.categories.active.description}</h4>
 
       <div className="cardContaner">
-        {props.products.fillterd.map((item) => {
+        {props.products.fillterd.map((item, idx) => {
           return (
-            <div className="myCard">
+            <div key={idx} className="myCard">
               <Card className={classes.root}>
                 <CardActionArea>
                   <CardMedia
@@ -59,7 +67,11 @@ function Products(props) {
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                  <Button size="small" color="primary">
+                  <Button
+                    size="small"
+                    color="primary"
+                    onClick={() => handleAddToCart(item)}
+                  >
                     ADD TO Cart
                   </Button>
                   <Button size="small" color="primary">
@@ -79,4 +91,5 @@ const mapStateToProps = (state) => {
   return state;
 };
 
-export default connect(mapStateToProps)(Products);
+const mapDispatchToProps = { reduceCount, addItem };
+export default connect(mapStateToProps, mapDispatchToProps)(Products);

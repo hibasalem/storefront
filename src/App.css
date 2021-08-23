@@ -44,11 +44,13 @@
 
 .cardContaner {
   /* margin: 5%; */
+  margin-left: 10% !important ;
+  margin-right: 10% !important;
 }
 
 .myCard {
   margin: 5%;
-  width: 300px;
+  width: 250px;
   display: inline-grid;
 }
 
@@ -95,4 +97,32 @@
   background-color: rgba(231, 231, 231, 0.288) !important;
   color: black !important;
   letter-spacing: 3px !important;
+}
+
+.cart {
+  width: 235px !important;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  background-image: linear-gradient(135deg, transparent 66%, #f5f5f5 67%),
+    linear-gradient(45deg, #f5f5f5 33%, grey 34%, transparent 44%);
+  background-position: -5px 0;
+  background-size: 10px 100%;
+  bottom: auto;
+  margin-top: 10px !important;
+}
+
+.cartCont {
+  width: 200px !important;
+  background: #f5f5f5;
+  border: 1px solid #f5f5f5;
+  list-style-type: none;
+  margin: 0;
+  padding: 1rem;
+}
+
+.outterCard {
+  position: fixed;
+  left: 80%;
+  z-index: 5;
 }

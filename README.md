@@ -2,23 +2,14 @@
 
 an application that will power an online storefront that will allow our users to browse our product offerings by category, place items in their shopping cart, and check-out when they are ready to make their purchase
 
-
-## lab 36
-
 **_Phase 1_**: starting the process of creating an e-Commerce storefront using React with Redux, coupled with your live API server
 
-[pull request](https://github.com/hibasalem/storefront/pull/1)   
-[netlify](https://thirsty-snyder-a42635.netlify.app/)
+**_Phase 2_**: Continue work on the e-Commerce storefront, breaking up the store into multiple reducers and sharing functionality/data between components
 
-- Application Setup
-- Basic React Application
-- Redux State Management
-- State managed in memory
-- Material UI Components & Styling
+[pull request](https://github.com/hibasalem/storefront/pull/2)  
+[netlify](https://thirsty-snyder-a42635.netlify.app)
 
-
-
-![Uml](lab36.jpg)
+![Uml](lab37.jpg)
 
 ### main features
 
