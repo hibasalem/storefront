@@ -23,7 +23,7 @@ const categoriesReducer = (state = initialState, action) => {
         item.normalizedName === payload ? (active = item) : false
       );
       const Categories = state.Categories;
-      console.log(active);
+      // console.log(active);
       return { Categories, active };
 
     default:
