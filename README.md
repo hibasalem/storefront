@@ -6,10 +6,12 @@ an application that will power an online storefront that will allow our users to
 
 **_Phase 2_**: Continue work on the e-Commerce storefront, breaking up the store into multiple reducers and sharing functionality/data between components
 
-[pull request](https://github.com/hibasalem/storefront/pull/2)  
+**_Phase 3_**: Connect the Virtual Store to an API to retrieve live data from your data source, using thunk to enable asynchronous actions
+
+[pull request](https://github.com/hibasalem/storefront/pull/3)  
 [netlify](https://trusting-wescoff-5aae4c.netlify.app/)
 
-![Uml](lab37.jpg)
+![Uml](lab38.jpg)
 
 ### main features
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { increseCount } from '../../store/products';
+import { removeFromCart } from '../../store/thunk';
 import { removeItem } from '../../store/cart';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -40,7 +41,8 @@ function SimpleCart(props) {
   }, []);
 
   function deleteItem(item) {
-    props.increseCount(item);
+    // props.increseCount(item);
+    props.removeFromCart(item);
     props.removeItem(item);
   }
 
@@ -48,7 +50,11 @@ function SimpleCart(props) {
     <div className="outterCard">
       {props.cart.items.length > 0 && (
         <Paper className="cartCont">
-          <p>total : {props.cart.total}</p>
+          <p>
+            total :{' '}
+            {Math.round((props.cart.total + Number.EPSILON) * 100) / 100}
+          </p>
+
           {props.cart.items.map((item, idx) => {
             return (
               <p key={idx}>
@@ -72,5 +78,5 @@ const mapStateToProps = (state) => {
   return state;
 };
 
-const mapDispatchToProps = { increseCount, removeItem };
+const mapDispatchToProps = { increseCount, removeItem, removeFromCart };
 export default connect(mapStateToProps, mapDispatchToProps)(SimpleCart);
