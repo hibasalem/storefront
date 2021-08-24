@@ -9,17 +9,11 @@ const cartReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case 'ADD_ITEM':
-      if (payload.count > 0) {
+      
+      if (payload.inStock > 0) {
         let newItems = [...state.items, payload];
         let newCount = state.count + 1;
         let newTotal = state.total + payload.price;
-
-        // console.log('add item', {
-        //   newItems,
-        //   newCount,
-        //   newTotal,
-        //   newshow,
-        // });
 
         return {
           items: newItems,
@@ -32,7 +26,7 @@ const cartReducer = (state = initialState, action) => {
         return state;
       }
     case 'REMOVE_ITEM':
-      if (payload.count > 0) {
+      if (payload.inStock > 0) {
         let newItems = state.items.filter((item) => {
           return item.name !== payload.name;
         });

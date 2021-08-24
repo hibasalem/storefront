@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { reduceCount } from '../../store/products';
 import { addItem } from '../../store/cart';
+import { addTocart } from '../../store/thunk';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -26,13 +27,16 @@ function Products(props) {
 
   function handleAddToCart(item) {
     props.addItem(item);
-    if (item.count > 0) props.reduceCount(item);
+    if (item.inStock > 0) {
+      // props.reduceCount(item);
+      props.addTocart(item);
+    }
   }
 
   return (
     <div className="cardMain">
-      {/* {console.log(props)} */}
-      <h2 className="name">{props.categories.active.normalizedName}</h2>
+      {console.log(props)}
+      <h2 className="name">{props.categories.active.name}</h2>
       <h4 className="discription">{props.categories.active.description}</h4>
 
       <div className="cardContaner">
@@ -43,7 +47,7 @@ function Products(props) {
                 <CardActionArea>
                   <CardMedia
                     className={classes.media}
-                    image={item.img}
+                    image={`https://source.unsplash.com/random?${item.name}`}
                     title="Contemplative Reptile"
                   />
                   <CardContent>
@@ -55,14 +59,14 @@ function Products(props) {
                       color="textSecondary"
                       component="p"
                     >
-                      {item.description}
+                      {item.description?.slice(200, item.description.length)}
                     </Typography>
                     <Typography
                       variant="body2"
                       color="textSecondary"
                       component="p"
                     >
-                      Price : {item.price} | avilable : {item.count}
+                      Price : {item.price} | avilable : {item.inStock}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -91,5 +95,5 @@ const mapStateToProps = (state) => {
   return state;
 };
 
-const mapDispatchToProps = { reduceCount, addItem };
+const mapDispatchToProps = { reduceCount, addItem, addTocart };
 export default connect(mapStateToProps, mapDispatchToProps)(Products);
